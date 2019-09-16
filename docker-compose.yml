@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  claimants-service:
+    container_name: claimants-service-java
+    build: .
+    image: claimants-service-java:1.0
+    ports:
+      - "8080:8080"

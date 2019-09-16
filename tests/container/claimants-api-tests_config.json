@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "2.0.0",
+  "commandTests": [
+    {
+      "name": "JDK Check",
+      "command": "which",
+      "args": [ "java" ],
+      "expectedOutput": [ "/usr/bin/java" ] 
+    }
+  ],
+  "fileExistenceTests": [
+    {
+      "name": "Application JAR",
+      "path": "/usr/app/claimants-service-api/app.jar",
+      "shouldExist": true
+    }
+  ],
+  "metadataTest": {
+    "exposedPorts": [ "8080" ],
+    "entrypoint": [ "java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "app.jar" ],
+    "cmd": [],
+    "workdir": "/usr/app/claimants-service-api"
+  }
+}
